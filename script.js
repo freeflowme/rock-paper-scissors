@@ -1,3 +1,7 @@
+let playerSelection;
+let computerSelection;
+
+
 function getComputerChoice() {
     const choices = ["Rock", "Paper", "Scissors"];
     let choice = choices[Math.floor(Math.random() * choices.length)];
@@ -8,31 +12,40 @@ function getComputerChoice() {
 console.log(getComputerChoice())
 */
 
-function playOneRound() {
-    let playerSelection = prompt("Enter one: Rock, Paper, or Scissors").toLowerCase();
-    let computerSelection = getComputerChoice(); 
+function playRound() {
+    playerSelection = prompt("Enter one: Rock, Paper, or Scissors").toLowerCase();
+    computerSelection = getComputerChoice().toLowerCase();
+
+
+    console.log(playerSelection)
+    console.log(computerSelection)
+
+
     if(playerSelection === computerSelection) {
-        return "Tie!"
-    }
-    if(playerSelection === "Rock") {
-        if(computerSelection === "Scissors") {
-            return "Congratulations, you win!";
-        } else {
-            return "Sorry, you lose.  Better luck next time!";
-        }
-    }
-    if(playerSelection === "Paper") {
-        if(computerSelection === "Rock") {
-            return "Congratulations, you win!";
-        } else {
-            return "Sorry, you lose.  Better luck next time!";
-        }
-    }
-    if(playerSelection === "Scissors") {
-        if(computerSelection === "Paper") {
-            return "Congratulations, you win!";
-        } else {
-            return "Sorry, you lose.  Better luck next time!";
-        }
+        alert("Tie!");
+        return "Tie!";
+    } else if (
+        (playerSelection == "rock" && computerSelection == "paper") ||
+        (playerSelection == "paper" && computerSelection == "scissors") ||
+        (playerSelection == "scissors" && computerSelection == "rock")
+    )   {
+            alert("Loss!");
+            return "Loss!";
+    } else if (
+        (playerSelection == "rock" && computerSelection == "scissors") ||
+        (playerSelection == "paper" && computerSelection == "rock") ||
+        (playerSelection == "scissors" && computerSelection == "paper")
+    )   {
+            alert("Win!");
+            return "Win!";
     }
 }
+
+
+function game() {
+    for(let i = 1; i < 5; i++) {
+        playRound();
+    }
+}
+
+game ()
