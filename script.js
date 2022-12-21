@@ -41,7 +41,7 @@ function playRound() {
     }
 }
 
-
+/*
 function game() {
     for(let i = 1; i < 5; i++) {
         playRound();
@@ -49,3 +49,19 @@ function game() {
 }
 
 game ()
+*/
+
+const rockbtn = document.querySelector("#rockbtn");
+rockbtn.addEventListener('click', () => {
+    playRound("Rock");
+}) 
+
+const paperbtn = document.querySelector("#paperbtn");
+paperbtn.addEventListener('click', () => {
+    playRound("Paper");
+})
+
+const scissorsbtn = document.querySelector("#scissorsbtn");
+scissorsbtn.addEventListener('click', () => {
+    playRound("Scissors");
+})
