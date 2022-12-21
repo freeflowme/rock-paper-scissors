@@ -12,10 +12,9 @@ function getComputerChoice() {
 console.log(getComputerChoice())
 */
 
-function playRound() {
-    playerSelection = prompt("Enter one: Rock, Paper, or Scissors").toLowerCase();
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
     computerSelection = getComputerChoice().toLowerCase();
-
 
     console.log(playerSelection)
     console.log(computerSelection)
