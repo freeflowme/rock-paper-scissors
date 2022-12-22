@@ -56,7 +56,7 @@ function playRound(playerSelection, computerSelection) {
 
             const lossScore = document.createElement("p");
             lossScore.classList.add("lossScore");
-            lossScore.textContent = ${computerScore};
+            lossScore.textContent = "The computer's score is... " + `${computerScore}`;
             scoreDiv.appendChild(lossScore);
            
     } else if (
@@ -73,9 +73,26 @@ function playRound(playerSelection, computerSelection) {
 
             const winScore = document.createElement("p");
             winScore.classList.add("winScore");
-            winScore.textContent = ${playerScore};
+            winScore.textContent = "Your score is... " + `${playerScore}`;
             scoreDiv.appendChild(winScore);
          
+    }
+}
+
+function declareWinner(playerScore, computerScore) {
+    
+    const winnerDiv = document.querySelector("#winnerDiv");
+
+    if(playerScore === 5) {
+        const playerWins = document.createElement("p");
+        playerWins.classList.add("playerWins");
+        playerWins.textContent = "YOU WIN THIS GAME!";
+        winnerDiv.appendChild(playerWins);
+    } else if (computerScore === 5) {
+        const compyWins = document.createElement("p");
+        compyWins.classList.add("compyWins");
+        compyWins.textContent = "THE COMPUTER WINS THIS GAME!";
+        winnerDiv.appendChild(compyWins);
     }
 }
 
