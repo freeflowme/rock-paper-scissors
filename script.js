@@ -34,15 +34,14 @@ function playRound(playerSelection, computerSelection) {
 
     const resultsDiv = document.querySelector("#resultsDiv");
 
+    const scoreDiv = document.querySelector("#scoreDiv");
+
     if(playerSelection === computerSelection) { 
         const isTie = document.createElement("p");
         isTie.classList.add("isTie");
-        isTie.textContent = "It's a tie!";
+        isTie.textContent = "This round is a tie!";
         resultsDiv.appendChild(isTie);    
-        /*
-        alert("Tie!");
-        */
-        return "Tie!";
+       
     } else if (
         (playerSelection == "rock" && computerSelection == "paper") ||
         (playerSelection == "paper" && computerSelection == "scissors") ||
@@ -50,12 +49,16 @@ function playRound(playerSelection, computerSelection) {
     )   { 
             const isLoss = document.createElement("p");
             isLoss.classList.add("isLoss");
-            isLoss.textContent = "Sorry... you lose";
+            isLoss.textContent = "Sorry... you lose this round!";
             resultsDiv.appendChild(isLoss);
-            /*    
-            alert("Loss!");
-            */
-            return "Loss!";
+
+            computerScore++; 
+
+            const lossScore = document.createElement("p");
+            lossScore.classList.add("lossScore");
+            lossScore.textContent = ${computerScore};
+            scoreDiv.appendChild(lossScore);
+           
     } else if (
         (playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "paper" && computerSelection == "rock") ||
@@ -63,22 +66,28 @@ function playRound(playerSelection, computerSelection) {
     )   {
             const isWin = document.createElement("p");
             isWin.classList.add("isWin");
-            isWin.textContent = "Congratulations... you win!";
+            isWin.textContent = "Congratulations... you win this round!";
             resultsDiv.appendChild(isWin);
-            /*
-            alert("Win!");
-            */
-            return "Win!";
+
+            playerScore++;
+
+            const winScore = document.createElement("p");
+            winScore.classList.add("winScore");
+            winScore.textContent = ${playerScore};
+            scoreDiv.appendChild(winScore);
+         
     }
 }
 
-
+/*
 function game() {
     for(let i = 1; i < 5; i++) {
         playRound();
     }
 }
 
+game ()
+*/
 
 const rockbBtn = document.querySelector("#rockBtn");
 rockBtn.addEventListener('click', () => {
