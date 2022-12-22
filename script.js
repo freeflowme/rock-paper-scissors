@@ -18,15 +18,17 @@ function playRound(playerSelection, computerSelection) {
 
     const selectionDiv = document.querySelector("#selectionDiv");
     
-    const youChose = document.createElement('p');
-        youChose.classList.add('youChose');
+    const youChose = document.createElement("p");
+        youChose.classList.add("youChose");
         youChose.textContent = "You chose " + playerSelection;
-
-    selectionDiv.appendChild(youChose);
-
-    const compyChose = document.querySelector("#selectionDiv");
-        compyChose.classList.add('compyChose');
-        compyChose.textContent = "The computer chose " +computerSelection; 
+    
+        selectionDiv.appendChild(youChose);
+    
+    const compyChose = document.createElement("p");
+        compyChose.classList.add("compyChose");
+        compyChose.textContent = "The computer chose " + computerSelection; 
+    
+        selectionDiv.appendChild(compyChose);
 
     /*    
     console.log(playerSelection)
@@ -34,21 +36,53 @@ function playRound(playerSelection, computerSelection) {
     */
 
     if(playerSelection === computerSelection) {
+
+        const resultsDiv = document.querySelector("#resultsDiv");
+
+        const isTie = docoument.createElement("p");
+            isTie.classList.add("isTie");
+            isTie.textContent = "It's a tie!";
+        
+            resultsDiv.appendChild(isTie);
+        
+        /*
         alert("Tie!");
+        */
+
         return "Tie!";
+
     } else if (
         (playerSelection == "rock" && computerSelection == "paper") ||
         (playerSelection == "paper" && computerSelection == "scissors") ||
         (playerSelection == "scissors" && computerSelection == "rock")
     )   {
+
+            const isLoss = document.createElement("p");
+                isLoss.classList.add("isLoss");
+                isLoss.textContent = "Sorry... you lose";
+
+                resultDiv.appendChild(isLoss);
+            
+            /*    
             alert("Loss!");
+            */
+
             return "Loss!";
+
     } else if (
         (playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "paper" && computerSelection == "rock") ||
         (playerSelection == "scissors" && computerSelection == "paper")
     )   {
+
+            const isWin = document.createElement("p");
+                isWin.classList.add("isWin");
+                isWin.textContent = "Congratulations... you win!";
+
+            /*
             alert("Win!");
+            */
+
             return "Win!";
     }
 }
