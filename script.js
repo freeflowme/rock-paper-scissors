@@ -16,9 +16,22 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = getComputerChoice().toLowerCase();
 
+    const selectionDiv = document.querySelector("#selectionDiv");
+    
+    const youChose = document.createElement('p');
+        youChose.classList.add('youChose');
+        youChose.textContent = "You chose " + playerSelection;
+
+    selectionDiv.appendChild(youChose);
+
+    const compyChose = document.querySelector("#selectionDiv");
+        compyChose.classList.add('compyChose');
+        compyChose.textContent = "The computer chose " +computerSelection; 
+
+    /*    
     console.log(playerSelection)
     console.log(computerSelection)
-
+    */
 
     if(playerSelection === computerSelection) {
         alert("Tie!");
@@ -50,17 +63,17 @@ function game() {
 game ()
 */
 
-const rockbtn = document.querySelector("#rockbtn");
-rockbtn.addEventListener('click', () => {
+const rockbBtn = document.querySelector("#rockBtn");
+rockBtn.addEventListener('click', () => {
     playRound("Rock");
 }) 
 
-const paperbtn = document.querySelector("#paperbtn");
-paperbtn.addEventListener('click', () => {
+const paperBtn = document.querySelector("#paperBtn");
+paperBtn.addEventListener('click', () => {
     playRound("Paper");
 })
 
-const scissorsbtn = document.querySelector("#scissorsbtn");
-scissorsbtn.addEventListener('click', () => {
+const scissorsBtn = document.querySelector("#scissorsBtn");
+scissorsBtn.addEventListener('click', () => {
     playRound("Scissors");
 })
