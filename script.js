@@ -17,7 +17,8 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = getComputerChoice().toLowerCase();
 
     const selectionDiv = document.querySelector("#selectionDiv");
-    
+    const resultsDiv = document.querySelector("#resultsDiv");
+
     const youChose = document.createElement("p");
         youChose.classList.add("youChose");
         youChose.textContent = "You chose " + playerSelection;
@@ -36,8 +37,6 @@ function playRound(playerSelection, computerSelection) {
     */
 
     if(playerSelection === computerSelection) {
-
-        const resultsDiv = document.querySelector("#resultsDiv");
 
         const isTie = docoument.createElement("p");
             isTie.classList.add("isTie");
@@ -61,7 +60,7 @@ function playRound(playerSelection, computerSelection) {
                 isLoss.classList.add("isLoss");
                 isLoss.textContent = "Sorry... you lose";
 
-                resultDiv.appendChild(isLoss);
+                resultsDiv.appendChild(isLoss);
             
             /*    
             alert("Loss!");
@@ -79,6 +78,8 @@ function playRound(playerSelection, computerSelection) {
                 isWin.classList.add("isWin");
                 isWin.textContent = "Congratulations... you win!";
 
+                resultsDiv.appendChild(isWin);
+            
             /*
             alert("Win!");
             */
