@@ -87,17 +87,8 @@ function playRound(playerSelection, computerSelection) {
         compyWins.classList.add("compyWins");
         compyWins.textContent = "THE COMPUTER WINS THIS GAME!";
         winnerDiv.appendChild(compyWins);
-}
-
-/*
-function game() {
-    for(let i = 1; i < 5; i++) {
-        playRound();
     }
 }
-
-game ()
-*/
 
 const rockbBtn = document.querySelector("#rockBtn");
 rockBtn.addEventListener('click', () => {
@@ -111,3 +102,34 @@ const scissorsBtn = document.querySelector("#scissorsBtn");
 scissorsBtn.addEventListener('click', () => {
     playRound("Scissors");
 })
+
+
+/*
+function game() {
+    for(let i = 1; i < 5; i++) {
+        playRound();
+    }
+}
+
+game ()
+*/
+
+
+/*
+function declareWinner(playerScore, computerScore) {
+    
+    const winnerDiv = document.querySelector("#winnerDiv");
+
+    if(playerScore === 5) {
+        const playerWins = document.createElement("p");
+        playerWins.classList.add("playerWins");
+        playerWins.textContent = "YOU WIN THIS GAME!";
+        winnerDiv.appendChild(playerWins);
+    } else if (computerScore === 5) {
+        const compyWins = document.createElement("p");
+        compyWins.classList.add("compyWins");
+        compyWins.textContent = "THE COMPUTER WINS THIS GAME!";
+        winnerDiv.appendChild(compyWins);
+    }
+}
+*/
