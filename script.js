@@ -33,8 +33,8 @@ function playRound(playerSelection, computerSelection) {
     */
 
     const resultsDiv = document.querySelector("#resultsDiv");
-
     const scoreDiv = document.querySelector("#scoreDiv");
+    const winnerDiv = document.querySelector("#winnerDiv");
 
     if(playerSelection === computerSelection) { 
         const isTie = document.createElement("p");
@@ -74,14 +74,8 @@ function playRound(playerSelection, computerSelection) {
             const winScore = document.createElement("p");
             winScore.classList.add("winScore");
             winScore.textContent = "Your score is... " + `${playerScore}`;
-            scoreDiv.appendChild(winScore);
-         
+            scoreDiv.appendChild(winScore);    
     }
-}
-
-function declareWinner(playerScore, computerScore) {
-    
-    const winnerDiv = document.querySelector("#winnerDiv");
 
     if(playerScore === 5) {
         const playerWins = document.createElement("p");
@@ -93,7 +87,6 @@ function declareWinner(playerScore, computerScore) {
         compyWins.classList.add("compyWins");
         compyWins.textContent = "THE COMPUTER WINS THIS GAME!";
         winnerDiv.appendChild(compyWins);
-    }
 }
 
 /*
